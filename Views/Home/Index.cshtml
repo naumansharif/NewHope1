@@ -1,0 +1,135 @@
+﻿@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+
+
+
+
+<link rel="stylesheet" href="~/Content/bootstrap.css">
+<link rel="stylesheet" href="~/Content/bootstrap-theme.css">
+@*@Scripts.Render("~/bundles/jQuery")*@
+
+
+
+<div class="row">
+    <div class="col-md-2"></div>
+    <div class="col-md-8">
+
+        <div id="wowslider-container1">
+            <div class="ws_images">
+                <a href="#"><img src="~/data1/images/staff.jpg" alt="Staff" title="Staff" id="wows0" /></a>
+                <a href="#"><img src="~/data1/images/banner1.jpg" alt="banner1" title="banner1" id="wows1" /></a>
+                <a href="#"><img src="~/data1/images/banner2.jpg" alt="banner2" title="banner2" id="wows2" /></a>
+                <a href="#"><img src="~/data1/images/banner3.jpg" alt="banner3" title="banner3" id="wows3" /></a>
+                <a href="#"><img src="~/data1/images/medicine.jpg" alt="medicine" title="medicine" id="wows4" /></a>
+                <a href="#"><img src="~/data1/images/newhope1.jpg" alt="newHope1" title="newHope1" id="wows5" /></a>
+            </div>
+            <div class="ws_bullets">
+                <div>
+                    <a href="#wows0" title="Staff"><img src="~/data1/tooltips/staff.jpg" alt="Staff" />1</a>
+                    <a href="#wows1" title="banner1"><img src="~/data1/tooltips/banner1.jpg" alt="banner1" />2</a>
+                    <a href="#wows2" title="banner2"><img src="~/data1/tooltips/banner2.jpg" alt="banner2" />3</a>
+                    <a href="#wows3" title="banner3"><img src="~/data1/tooltips/banner3.jpg" alt="banner3" />4</a>
+                    <a href="#wows4" title="medicine"><img src="~/data1/tooltips/medicine.jpg" alt="medicine" />5</a>
+                    <a href="#wows5" title="newHope1"><img src="~/data1/tooltips/newhope1.jpg" alt="newHope1" />6</a>
+                </div>
+            </div>
+
+        </div>
+    </div>
+    <div class="col-md-2"></div>
+</div>
+
+
+<script type="text/javascript" src="~/engine1/script.js"></script>
+<!-- End WOWSlider.com BODY section -->
+
+
+
+<div class="row">
+    <div class="col-md-2"></div>
+    <div class="col-md-4">
+        <br><br><br><br>
+        <font size="6" color="#33CCFF"> NewHope </font><font size="6" color="#415c81"> History</font>
+        <p>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            NewHope is a non profit organization provided for citizens of Pakistan. New Hope was founded with the hopes of helping those, who could not find their related Doctors in their near by areas
+        </p>
+
+        <br><br><br>
+        <font size="1" color="#C8C8C8"> ------------------------------------------------------------------------------------------------------------------------</font>
+
+        <font size="6" color="#415c81"> What You Need To Know</font>
+        <div>
+            <img src="~/images/alfabat-A.png" /><font size="3" color="#415c81"> About Us</font>
+            <p>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                To maintain a positive atmosphere while helping to resolve individual situations in a productive matter.
+            </p>
+            <br><br><br><br>
+        </div>
+    </div>
+
+    <div class="col-md-4" id="signIn">
+        <br><br><br><br>
+        <font size="6" color="#415c81"> Sign In</font>
+        <br>
+        <br>
+        
+       
+        
+
+        <div>
+            <br>
+            @using (Html.BeginForm("SignInGo", "Home", FormMethod.Post))
+            {
+                @Html.Label("User Name")
+                @Html.TextBox("id", "", new {placeholder="user name", @class = "form-control" })
+                @Html.Label("Password")
+                @Html.Password("pwd", "", new {placeholder="password", @class = "form-control" })
+                
+                <br>
+                
+               @Html.RadioButton("choice","patient")
+                
+               <span>&nbsp;</span>
+                
+                @Html.Label("patient")
+                
+                
+                
+                
+                <br>
+                @Html.RadioButton("choice","doctor") <span>&nbsp;</span>
+                @Html.Label("doctor")
+                
+                <br>
+                @Html.RadioButton("choice","admin") <span>&nbsp;</span>
+                @Html.Label("admin")
+                <div ><font color="red"> @TempData["msg"]</font></div>
+                <br>
+                <div class="pull-right">@Html.ActionLink("Register Now", "SignUp", "Home")</div>
+                
+                
+                
+                <div class="col-md-4">
+                    <input type="submit" class="btn btn-primary form-control" />
+                    <br>
+                    <br>
+                </div>
+               
+            }
+           
+        </div>
+
+    </div>
+   
+    <div class="col-md-2">
+
+    </div>
+
+</div>
+

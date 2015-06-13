@@ -1,0 +1,197 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" type="text/css" href="~/engine1/style.css" media="screen" />
+    <link rel="stylesheet" type="text/css" href="~/Content/font-awesome.css" media="screen" />
+    <link rel="stylesheet" type="text/css" href="~/Content/font-awesome.min.css" media="screen" />
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+    <style type="text/css">
+        a#vlb {
+            display: none;
+        }
+    </style>
+    <script type="text/javascript" src="~/engine1/jquery.js"></script>
+    <!-- End WOWSlider.com HEAD section -->
+
+    <link rel="stylesheet" href="~/Content/bootstrap.css">
+    <link rel="stylesheet" href="~/Content/bootstrap-theme.css">
+    <!-- upto index-->
+    <link rel="stylesheet" href="~/Content/bootstrap.css">
+    <link rel="stylesheet" href="~/Content/bootstrap-theme.css">
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <title>@ViewBag.Title</title>
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+
+
+</head>
+<body background="~/images/newHope.png" style="background-repeat: no-repeat">
+    <br>
+    <br>
+    <div class="row">
+        <div class="col-md-2"></div>
+        <div class="col-md-3">
+            <img src="~/images/logo.png" />
+        </div>
+        <div class="col-md-2"></div>
+        <div class="col-md-3 ">
+            <br><br>
+            <br><br>
+
+
+        </div>
+        <div class="col-md-2"></div>
+    </div>
+    <div class="row">
+        <div class="col-md-2"></div>
+        <div class="col-md-8">
+            <nav class="navbar " role="navigation">
+
+                <div>
+                    <ul class=" nav nav-pills nav-justified">
+                        <li class="active"><a href="~/Home/Index"><i class="fa fa-home " style="color: #FFFFFF"></i> Home</a></li>
+                        <li style="background: #E0E0E0 ; "><a href="~/Home/AboutUs"><i class="fa fa-crosshairs"></i><b> About Us</b></a></li>
+                        <li style="background: #E0E0E0 ; "><a href="~/Home/SearchDoctor"><i class="fa fa-search "></i><b> Search Doctor</b></a></li>
+                        <li style="background: #E0E0E0 ; "><a href="~/Home/MedicalHistory"><i class="fa fa-list "></i><b> Medical History</b></a></li>
+                        @if (@Session["username"]==null)
+                        {
+                            <li style="background: #E0E0E0;"><a href="~/Home/SignUp"><i class="fa fa-sign-in "></i><b> sign Up</b></a></li>
+                        }
+                        @if (Session["userD"] != null )
+                        {
+                            <li class="dropdown" style="background: #E0E0E0 ; ">
+                                <a href="#" data-toggle="dropdown" class="dropdown-toggle">@Session["username"] <b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    <li style="background: #E0E0E0 ; "><a href="~/Doctor/DoctorProfile1"><i class="fa fa-hospital-o "></i><b> View Profile</b></a></li>
+                                    <li style="background: #E0E0E0 ; "><a href="~/Home/SignOut"><i class="fa fa-sign-out "></i><b> Sign out</b></a></li>
+                                </ul>
+
+                            </li>
+
+                        }else if (Session["userP"] != null )
+                        {
+                        <li class="dropdown" style="background: #E0E0E0 ; ">
+                            <a href="#" data-toggle="dropdown" class="dropdown-toggle">@Session["username"] <b class="caret"></b></a>
+                            <ul class="dropdown-menu">
+                                <li style="background: #E0E0E0 ; "><a href="~/Patient/PatientProfile"><i class="fa fa-wheelchair "></i><b> View Profile</b></a></li>
+                                <li style="background: #E0E0E0 ; "><a href="~/Home/SignOut"><i class="fa fa-sign-out "></i><b> Sign out</b></a></li>
+                            </ul>
+
+                        </li>
+
+                        }
+                        else if (Session["userA"] != null)
+                        {
+                             <li class="dropdown" style="background: #E0E0E0 ; ">
+                            <a href="#" data-toggle="dropdown" class="dropdown-toggle">@Session["username"] <b class="caret"></b></a>
+                            <ul class="dropdown-menu">
+                                <li style="background: #E0E0E0 ; "><a href="~/Admin/Index"><i class="fa fa-sign-out "></i><b> View Doctors</b></a></li>
+                                <li style="background: #E0E0E0 ; "><a href="~/Admin/ShowFeedbacks"><i class="fa fa-twitch "></i><b> Feedbacks</b></a></li>
+                                <li style="background: #E0E0E0 ; "><a href="~/Home/SignOut"><i class="fa fa-sign-out "></i><b> Sign out</b></a></li>
+                            </ul>
+
+                        </li>
+                        
+                        }
+
+                    </ul>
+
+                </div>
+                <br><br>
+            </nav>
+        </div>
+
+
+    </div>
+
+
+    @RenderBody()
+
+    @Scripts.Render("~/bundles/jquery")
+    @RenderSection("scripts", required: false)
+
+
+    <footer>
+        <div class="modal-footer " style="background-color: #415c81; color: #ffffff">
+            <div class="row">
+
+                <div class="col-md-2">
+
+                </div>
+                <div class="col-md-8">
+                    <div class="row">
+                        <div class="col-md-4">
+                            <b> Home</b>
+                            <br>
+                            <br>
+                            <div style="color: #3399FF">
+                                <a style="text-decoration: none; color: #3399FF" href="~/Home/SearchDoctor">Search Doctor</a> <br><br><a style="text-decoration: none; color: #3399FF" href="~/Home/MedicalHistory">Medical History</a>
+                            </div>
+                            <br>
+                            <br>
+                        </div>
+                        <div class="col-md-4">
+                            <b>About Us</b>
+                            <br>
+                            <br>
+                            <div style="color: #3399FF">
+                                <a style="text-decoration: none; color: #3399FF" href="~/Home/AboutUs">Team</a> <br><br>
+
+                            </div>
+                            <br>
+                            <br>
+                        </div>
+                        <div class="col-md-4">
+                            <b>TO CONTACT NEW HOPE</b>
+                            <br>
+                            <br>
+                            <div style="color: #989898">
+                                Email: bitf12m017@pucit.edu.pk<br><br>Phone: +923366624029
+                            </div>
+                            <br>
+                            <br>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-2">
+
+                </div>
+            </div>
+        </div>
+    </footer>
+    <div class="panel-footer">
+        <div class="col-md-9">
+
+        </div>
+        <div class="col-md-3">
+
+
+            <div>
+                <a href="http://www.twitter.com"><img src="~/images/rss.png" width="40" height="40" alt="" /></a>
+                <a href="http://www.facebook.com"><img src="~/images/fb.png" width="40" height="40" alt="" /></a>
+                <a href="http://www.gmail.com"><img src="~/images/letter.png" width="40" height="40" alt="" /></a>
+            </div>
+        </div>
+        <div class="col-md-1">
+
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-5"></div>
+        <div class="col-md-2 "><i class=" fa fa-cog fa-5x fa-spin " style="color: #3399FF; "></i> </div>
+        <div class="col-md-5"></div>
+
+    </div>
+    <script src="~/JS/jquery-2.1.1.js"></script>
+    <script src="~/JS/carousel.js"></script>
+    <script src="~/JS/jquery-min.js"></script>
+    <script src="~/JS/jquery-ui.js"></script>
+    <script src="~/JS/bootstrap.js"></script>
+    <script src="~/JS/myscripts.js"></script>
+
+</body>
+</html>
+
+

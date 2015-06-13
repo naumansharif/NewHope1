@@ -1,0 +1,60 @@
+﻿@{
+    ViewBag.Title = "SearchDoctor";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+<link rel="stylesheet" href="~/Content/bootstrap.css">
+<link rel="stylesheet" href="~/Content/bootstrap-theme.css">
+
+
+<div class="row">
+    <div class="col-md-2"></div>
+    <div class="col-md-4">
+        <br><br><br><br>
+        <font size="6" color="#33CCFF"> NewHope </font><font size="6" color="#415c81"> History</font>
+        <p>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            NewHope is a non profit organization provided for citizens of Pakistan. New Hope was founded with the hopes of helping those, who could not find their related Doctors in their near by areas
+        </p>
+
+        <br><br><br>
+        <font size="1" color="#C8C8C8"> ------------------------------------------------------------------------------------------------------------------------</font>
+
+        <font size="6" color="#415c81"> What You Need To Know</font>
+        <div>
+            <img src="~/images/alfabat-A.png" /><font size="3" color="#415c81"> About Us</font>
+            <p>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                To maintain a positive atmosphere while helping to resolve individual situations in a productive matter.
+            </p>
+            <br><br><br><br>
+        </div>
+    </div>
+    <div class="col-md-1"></div>
+    <div class="col-md-3">
+        <br><br><br><br>
+        <font size="8" color="#415c81"> Search Doctor</font>
+        <br><br><br>
+        <form action="~/Home/ShowDoctor" method="POST">
+            <input type="text" name="search" placeholder="City / specialization" class="form-control" /><br><br>
+            <label > search by:</label>
+            <select name="option" class="form-control">
+                <option class="form-control" value="city">City</option>
+                <option class="form-control" value="specialization">Specialization</option>
+            </select><br><br>
+            <input type="submit" value="Search" name="submit" class="btn btn-lg btn-primary"></input >
+        </form>
+        <br><br><br><br>
+
+
+
+        <br><br><br><br>
+    </div>
+    <div class="col-md-4">
+
+    </div>
+</div>
+
+
+

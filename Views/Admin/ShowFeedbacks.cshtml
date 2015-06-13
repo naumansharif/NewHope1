@@ -1,0 +1,36 @@
+﻿@using NewHope.Models
+@{
+    ViewBag.Title = "ShowFeedbacks";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+
+<link rel="stylesheet" href="~/Content/bootstrap.css">
+<link rel="stylesheet" href="~/Content/bootstrap-theme.css">
+<div class="row">
+    <div class="col-md-2"></div>
+    <div class="col-md-8">
+        <font size="7" color="#415c81"> Feedbacks</font>
+        <br><br><br>
+        @{
+            int x = 1;
+            foreach (var f in ViewBag.Feedbackinfo)
+            {
+
+                <font size="7" color="#415c81">. <font size="3" color="#415c81">feedback# @x </font></font>
+                <div style="width: 80%; height: 200px">
+                    <li class="list-group-item"> @f.feed </li>
+
+                </div>
+                x++;
+            }
+        }
+    </div>
+    
+    <div class="col-md-2"></div>
+</div>
+<br><br><br><br><br><br>
+
+
+

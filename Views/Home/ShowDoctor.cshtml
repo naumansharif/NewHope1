@@ -1,0 +1,99 @@
+﻿@using NewHope.Models
+@{
+    ViewBag.Title = "ShowDoctor";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+
+<link rel="stylesheet" href="~/Content/bootstrap.css">
+<link rel="stylesheet" href="~/Content/bootstrap-theme.css">
+
+
+
+<div class="row">
+    <div class="col-md-2"></div>
+    <div class="col-md-8">
+        <font size="7" color="#415c81"> Doctors</font>
+        <br><br><br>
+        <font size="5" color="#415c81"> Doctors's Details</font>
+        <br><br><br>
+
+
+        @{
+            foreach (var s in Model)
+            {
+                foreach (var a in ViewBag.DoctorInfo)
+                {
+
+                    if (a.email == s.email)
+                    {
+                        <fieldset>
+                            <legend>
+                                <font color="#415c81" size="4"> @s.fname &nbsp;&nbsp; @s.lname</font>
+                            </legend>
+                        </fieldset>
+
+                        <div class="row">
+                            <div class="col-md-3">
+                                <br><br>
+                                <img class="pull-right" src="~/Files/@s.img" style="width: 80% ; height: auto" />
+                            </div>
+                            <div class="col-md-3">
+                                <br>
+                                <br>
+                                <br>
+                                <b>
+                                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Email:<br>
+                                    <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;CNIC:<br>
+                                    <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;City:<br>
+                                    <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Blood:<br>
+                                    <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Mobile:<br>
+                                    <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Specialization:<br>
+                                    <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Visiting Hours:<br>
+                                    <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Fees:<br>
+                                </b>
+                            </div>
+                            <div class="col-md-6">
+                                <br>
+                                <br>
+                                <br><ul>
+                                        
+                                        <li>@s.email</li>
+                                        <br>
+                                        <li>@s.cnic</li>
+                                        <br>
+                                        <li>@s.city</li>
+                                        <br>
+                                        <li>@s.blood</li>
+                                        <br>
+                                        <li>@s.mobile</li>
+                                        <br>
+                                        <li>@a.specialization</li>
+                                        <br>
+                                        <li>@a.v_hours</li>
+                                        <br><li>@a.fees</li>
+
+                                    </ul>
+                            </div>
+                        </div>
+
+                        <br><br><br>
+
+                    }
+
+                }
+
+            }
+
+
+        }
+
+    </div>
+    <div class="col-md-2"></div>
+</div>
+<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+
+
+
